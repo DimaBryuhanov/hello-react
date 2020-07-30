@@ -2,16 +2,27 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-ReactDOM.render(
-  React.createElement("ul", 
-  {style: {color: "blue"}}, 
-  React.createElement('li', null, 'Hot Dogs'),
-  React.createElement('li', null, 'Hamburgers'),
-  React.createElement('li', null, 'Sushi'),
-  React.createElement('li', null, 'Pizza'),
-  React.createElement('li', null, 'Pasta')
-  ),
-  document.getElementById('root')
-);
+//https://babeljs.io/ try out in Babel:
+
+// ReactDOM.render(
+//   <ul>
+//   <li>Hot Dogs</li>
+//   <li>Hamburgers</li>
+//   <li>Sushi</li>
+//   <li>Pazza</li>
+// </ul>,
+//   document.getElementById('root')
+// );
+
+//You will get:
+ReactDOM.render( 
+  /*#__PURE__*/React.createElement("ul", null, 
+  /*#__PURE__*/React.createElement("li", null, "Hot Dogs"), 
+  /*#__PURE__*/React.createElement("li", null, "Hamburgers"), 
+  /*#__PURE__*/React.createElement("li", null, "Sushi"), 
+  /*#__PURE__*/React.createElement("li", null, "Pazza")), 
+  document.getElementById('root'));
+
+
 
 
