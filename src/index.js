@@ -35,8 +35,13 @@ function App(props) {
   );
 }
 
+//Array destructuring
+const [summer, fall, winter, sprint] = [
+  "summer", "fall", "winter", "spring"
+]
+
 ReactDOM.render(
-  <App season='fall' />,
+  <App season = {summer} />,
   document.getElementById('root')
 );
 
