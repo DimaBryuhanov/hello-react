@@ -1,47 +1,24 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-function Lake(props) {
+
+
+function App() {
+  //Hook
+  const [status, setStatus] = useState("Open");
   return (
     <div>
-      <h1>Visit {props.name}!</h1>
+      <h1>Status: {status}</h1>
+      <button onClick={() => setStatus("Open")}>Open</button>
+      <button onClick={() => setStatus("Closed")}>Closed</button>
     </div>
-  )
-}
-
-function SkiResort(props) {
-  return (
-    <div>
-      <h1>Visit {props.name}!</h1>
-    </div>
-  )
-}
-
-function App(props) {
-  return (
-    <React.Fragment>
-      {props.season === "summer" ? (
-        <Lake name="Huron" />
-      ) : (
-          props.season === 'winter' ? (
-            <SkiResort name="Tirol" />
-          ) : (
-              <h1> Come Back Later !</h1>
-            )
-        )}
-    </React.Fragment>
-
   );
 }
 
-//Array destructuring
-const [summer, fall, winter, sprint] = [
-  "summer", "fall", "winter", "spring"
-]
 
 ReactDOM.render(
-  <App season = {summer} />,
+  <App />,
   document.getElementById('root')
 );
 
