@@ -10,7 +10,9 @@ let city = {
 };
 
 ReactDOM.render(
-<h1>{city.name} is located in {city.country}</h1>,
+<h1 id='heading' className="cool-text">
+  {city.name} is located in {city.country}
+  </h1>,
   document.getElementById('root')
 );
 
