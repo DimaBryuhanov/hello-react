@@ -3,23 +3,26 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 const lakeList = [
-  "Lake Taho",
-  "Lake Huron",
-  "Lake Ontario"
+  { id: 1, name: "Huron", trailhead: "big" },
+  { id: 2, name: "Ontario", trailhead: "medium" },
+  { id: 3, name: "Taho", trailhead: "small" },
 ]
 
-function App(props) {
+function App({ lakes }) {
   return (
-    <div> 
-      {props.lakes.map(lake => (
-        <li>{lake}</li>
+    <div>
+      {lakes.map(lake => (
+        <div key={lake.id}>
+          <h2>Lake name: {lake.name}</h2>
+          <p>Trailhead:{lake.trailhead}</p>
+        </div>
       ))}
     </div>
-  )
+  );
 }
 
 ReactDOM.render(
-  <App lakes={lakeList}/>,
+  <App lakes={lakeList} />,
   document.getElementById('root')
 );
 
