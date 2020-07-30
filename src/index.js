@@ -1,40 +1,28 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
 
 
-function App() {
-  //Hook
-  const [year, setYear] = useState(2050)
-  const [status, setStatus] = useState("Open");
-  const [manager, setManager] = useState('John');
+function Checkbox() {
+  const [checked, setChecked] = useState(false);
+  useEffect(() => {
+    alert(`checked: ${checked.toString()}`);
+  })
   return (
     <>
-    <div>
-      <h2>Year: {year}</h2>
-      <button onClick={() => setYear(year + 1)}>
-        New Year
-      </button>
-    </div>
-    <div>
-      <h2>Manager on duty: {manager}</h2>
-      <button onClick={() => setManager("Donald")}>
-        New Manager
-      </button>
-    </div>
-    <div>
-      <h1>Status: {status}</h1>
-      <button onClick={() => setStatus("Open")}>Open</button>
-      <button onClick={() => setStatus("Closed")}>Closed</button>
-    </div>
-  </>
+      <input type="checkbox" value={checked}
+
+        onChange={() => setChecked(checked => !checked)}
+      />
+      {checked ? 'checked' : 'not checked'}
+    </>
   );
 }
 
 
 ReactDOM.render(
-  <App />,
+  <Checkbox />,
   document.getElementById('root')
 );
 
