@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 //JSX Syntax:
-function Hello(props) {
-  console.log(Object.keys(props))
+function Hello({library, message, number}) {
+  
   return (
     <div>
-      <h1>Welcome to {props.library}</h1>
-      <p>{props.message}</p>
-      <p>React components: {props.number}</p>
+      <h1>Welcome to {library}</h1>
+      <p>{message}</p>
+      <p>React components: {number}</p>
     </div>
   )
 }
