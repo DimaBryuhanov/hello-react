@@ -2,24 +2,24 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-function Lake (props) {
-  return (
-  <h1>{props.name}</h1>
-  )
-}
+const lakeList = [
+  "Lake Taho",
+  "Lake Huron",
+  "Lake Ontario"
+]
 
-function App() {
+function App(props) {
   return (
     <div> 
-      <Lake name="Lake Taho" />
-      <Lake name="Lake Huron" />
-      <Lake name="Lake Ontario" />
+      {props.lakes.map(lake => (
+        <li>{lake}</li>
+      ))}
     </div>
   )
 }
 
 ReactDOM.render(
-  <App />,
+  <App lakes={lakeList}/>,
   document.getElementById('root')
 );
 
