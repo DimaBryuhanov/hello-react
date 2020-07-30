@@ -2,26 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-//https://babeljs.io/ try out in Babel:
+//JSX Syntax:
 
-// ReactDOM.render(
-//   <ul>
-//   <li>Hot Dogs</li>
-//   <li>Hamburgers</li>
-//   <li>Sushi</li>
-//   <li>Pazza</li>
-// </ul>,
-//   document.getElementById('root')
-// );
+let city = {
+  name: "Madrid",
+  country: "Spain"
+};
 
-//You will get:
-ReactDOM.render( 
-  /*#__PURE__*/React.createElement("ul", null, 
-  /*#__PURE__*/React.createElement("li", null, "Hot Dogs"), 
-  /*#__PURE__*/React.createElement("li", null, "Hamburgers"), 
-  /*#__PURE__*/React.createElement("li", null, "Sushi"), 
-  /*#__PURE__*/React.createElement("li", null, "Pazza")), 
-  document.getElementById('root'));
+ReactDOM.render(
+<h1>{city.name} is located in {city.country}</h1>,
+  document.getElementById('root')
+);
 
 
 
