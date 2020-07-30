@@ -20,7 +20,7 @@ function SkiResort(props) {
 
 function App(props) {
   return (
-    <div>
+    <React.Fragment>
       {props.season === "summer" ? (
         <Lake name="Huron" />
       ) : (
@@ -30,7 +30,7 @@ function App(props) {
               <h1> Come Back Later !</h1>
             )
         )}
-    </div>
+    </React.Fragment>
 
   );
 }
