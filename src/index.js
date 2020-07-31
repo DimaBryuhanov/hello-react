@@ -3,35 +3,29 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 
-function GitHubUser({login}){
-  const [data, setData] = useState(null);
-  useEffect(() => {
-    fetch(`https://api.github.com/users/${login}`)
-    .then(res => res.json())
-    .then(setData)
-    .catch(console.error);
-  }, []);
 
-  if (data) {
-    return (
-    // <div>{JSON.stringify(data)}</div>
-    <div>
-      <h1>{data.login}</h1>
-      <img src={data.avatar_url} width={100}/>
-    </div>
-    )
+function Checkbox() {
+
+  const [checked, setChecked] = useState(false);
+
+  function toggle(){
+    setChecked(checked => !checked)
   }
-  return null;
-}
 
-function App() {
-
-  return <GitHubUser login="DimaBryuhanov"/>
+  return (
+    <>
+      <input type="checkbox" 
+      value={checked}
+      onChange={toggle }
+      />
+      {checked ? "checked" : "not checked"}
+    </>
+  )
 }
 
 
 ReactDOM.render(
-  <App />,
+  <Checkbox />,
   document.getElementById('root')
 );
 
