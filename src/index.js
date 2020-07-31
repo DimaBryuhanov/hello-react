@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useReducer } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
@@ -6,11 +6,7 @@ import './index.css';
 
 function Checkbox() {
 
-  const [checked, setChecked] = useState(false);
-
-  function toggle(){
-    setChecked(checked => !checked)
-  }
+  const [checked, toggle] = useReducer(checked => !checked,false);
 
   return (
     <>
