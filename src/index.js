@@ -4,25 +4,39 @@ import './index.css';
 
 
 
-function Checkbox() {
-  const [checked, setChecked] = useState(false);
+function App() {
+  const [val, setVal] = useState("");
+  const [val2, setVal2] = useState("");
+
   useEffect(() => {
-    alert(`checked: ${checked.toString()}`);
-  })
+    console.log(`field 1: ${val}`);
+  }, [val]); //Dependency array
+
+  useEffect(() => {
+    console.log(`field 2: ${val2}`);
+  }, [val2]); //Dependency array
+  
   return (
     <>
-      <input type="checkbox" value={checked}
-
-        onChange={() => setChecked(checked => !checked)}
-      />
-      {checked ? 'checked' : 'not checked'}
+      <label>
+        Favorite Phrase:
+        <br/>
+        <input value={val}
+        onChange={e => setVal(e.target.value)}/>
+        </label>
+        <br />
+        <label>
+        Second Favorite Phrase:
+        <input value={val2}
+        onChange={e => setVal2(e.target.value)}/>
+        </label>
     </>
   );
 }
 
 
 ReactDOM.render(
-  <Checkbox />,
+  <App />,
   document.getElementById('root')
 );
 
